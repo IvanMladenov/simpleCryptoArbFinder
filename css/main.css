@@ -1,0 +1,32 @@
+#formContainer{
+    width: 250px;
+}
+textarea{
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+button{
+    margin-top: 5px;
+    width: 49%;
+    padding: 5px;
+}
+#buttonsContainer{
+    width: 100%;
+    font-size: 0;
+}
+.success-tick{
+    position: relative;
+    margin-left: -35px;
+    display: none;
+    font-size: xx-large;
+    color: green;
+    vertical-align: text-bottom;
+}
+
+@media only screen and (max-width: 600px) {
+    #formContainer{
+        width: 98%;
+        margin: 0 auto;
+    }
+}

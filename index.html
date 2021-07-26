@@ -2,32 +2,13 @@
 <html>
 <head>
 <link rel="icon"  href="content/favicon.ico"/>
+<link rel="stylesheet" href="css/main.css">
 <title>DEX ARB</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style>
-    textarea{
-        margin-top: 5px;
-        width: 200px;
-    }
-    button{
-        margin-top: 5px;
-        width: 49%;
-        padding: 5px;
-    }
-    #buttonsContainer{
-        width: 208px;
-    }
-    .success-tick{
-        display: none;
-        font-size: xx-large;
-        color: green;
-        vertical-align: text-bottom;
-    }
-</style>
 </head>
 
 <body>
-    <div id="formContainer" style="width: 250px;">
+    <div id="formContainer">
         <label for="dex">Balanced price</label><br>
         <textarea name="dex"></textarea><span class="success-tick">&#10003;</span>
         <br>
@@ -36,14 +17,12 @@
         <textarea name="exchange"></textarea><span class="success-tick">&#10003;</span>
     
         <div id="buttonsContainer">
-            <button id="clearBtn">Clear</button>
-            <button id="getQuotes">Get quotes</button><br>
+            <button id="clearBtn" style="width: 49%; margin-right: 2%;">Clear</button>
+            <button id="getQuotes" style="width: 49%;">Get quotes</button><br>
             <button id="calculateBtn" style="width: 100%; background-color: peachpuff;">Calculate</button>
         </div>
+        <p>Arb: <span id="otuputElement"></span>%</p>
     </div>
-    
-    
-    <p>Arb: <span id="otuputElement"></span>%</p>
     
     <script src="scripts/main.js"></script>
 </body>
