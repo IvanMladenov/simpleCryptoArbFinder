@@ -16,9 +16,9 @@ $(document).ready(function(){
         secondElement.keydown(check);
 
         function calculate(){
-            var a = firstElement.val();
-            var b = secondElement.val();
-            var result = 100*(b-a)/a;
+            var a = Number.parseFloat(firstElement.val());
+            var b = Number.parseFloat(secondElement.val());
+            var result = Math.abs(a-b)*100;
 
             outputElement.text(result.toFixed(2));
         }
