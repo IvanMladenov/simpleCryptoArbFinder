@@ -18,7 +18,11 @@ $(document).ready(function(){
         function calculate(){
             var a = Number.parseFloat(firstElement.val());
             var b = Number.parseFloat(secondElement.val());
-            var result = Math.abs(a-b)*100;
+            var result = (a/b-1)*100;
+			
+			if(a<b){
+				result = (b/a-1)*100;
+			}
 
             outputElement.text(result.toFixed(2));
         }
