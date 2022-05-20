@@ -49,10 +49,27 @@ $(document).ready(function(){
 
         function getQuotes(){
             $.ajax({
-            url: "https://balanced.rhizome.dev/api/v2/dex/quote/",
-            type: 'GET',
-            success: function(res){
-                    firstElement.val(res.sicx_bnusd_quote);
+                url: "https://wallet.icon.foundation/api/v3",
+                type: 'POST',
+                data: JSON.stringify({
+                    "jsonrpc": "2.0",
+                    "method": "icx_call",
+                    "params": {
+                        "from": "hx23ada4a4b444acf8706a6f50bbc9149be1781e13",
+                        "to": "cxa0af3165c08318e988cb30993b3048335b94af6c",
+                        "dataType": "call",
+                        "data": {
+                            "method": "getSicxBnusdPrice"
+                        }
+                    },
+                    "id":25
+                }),
+                dataType: "json",
+                success: function (res) {
+
+                    var price = parseInt(res.result, 16)/10**18;
+
+                    firstElement.val(price);
                     firstElement.next('span').show().fadeOut(1500);
                 }
             });
