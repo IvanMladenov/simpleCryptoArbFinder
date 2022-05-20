@@ -78,7 +78,7 @@ $(document).ready(function(){
             url: "https://api.binance.com/api/v3/ticker/price?symbol=ICXUSDT",
             type: 'GET',
             success: function(res){
-                    secondElement.val(res.price.toFixed(2));
+		    secondElement.val(parseFloat(res.price).toFixed(4));
                     secondElement.next('span').show().fadeOut(1500);
                 }
             });
